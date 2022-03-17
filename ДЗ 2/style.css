@@ -27,7 +27,7 @@ legend, label {
 }
 input {
     font-size: 2rem;
-    height: 5vh;
+    height: 10vh;
 }
 
 button {
@@ -39,5 +39,5 @@ button {
 }
 .btn__container {
     display: flex;
-    justify-content: space-around;
+    column-gap: 5vw;
 }
