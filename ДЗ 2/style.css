@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 2vh;
+}
+body {
+    background: linear-gradient(180deg, #3A3E43 0%, #1C2025 100%);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), -4px -4px 4px rgba(255, 255, 255, 0.15);
+}
+form {
+    padding-top: 5vh;
+}
+fieldset {
+    display: flex;
+    flex-flow: column;
+    row-gap: 5vh;
+    width: 80vw;
+    padding: 5vw;
+    margin: 0 auto;
+}
+legend, label {
+    font-size: 2rem;
+    color: white;
+}
+input {
+    font-size: 2rem;
+}
+
+button {
+    font-size: 3rem;
+    font-weight: bold;
+    align-self: center;
+    border-radius: 1vw;
+    padding: 1vw;
+}
+.btn__container {
+    display: flex;
+    justify-content: space-around;
+}
