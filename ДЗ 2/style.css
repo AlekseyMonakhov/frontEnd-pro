@@ -3,11 +3,9 @@
 }
 
 html {
-    font-size: 2vh;
+    font-size: 1vw;
 }
-body {
-    background: linear-gradient(180deg, #3A3E43 0%, #1C2025 100%);
-}
+
 form {
     padding-top: 5vh;
     height: 100vh;
@@ -29,15 +27,44 @@ input {
     height: 10vh;
 }
 
-button {
+/* button {
     font-size: 2.5rem;
     font-weight: bold;
     align-self: center;
     border-radius: 1vw;
     padding: 1vw;
     border: none;
-}
+} */
 .btn__container {
     display: flex;
     column-gap: 5vw;
+}
+.content {
+    display: flex;
+    justify-content: center;
+}
+.card {
+    width: 30%;
+    position: relative;
+}
+.content__img {
+    width: 100%;
+}
+
+.card__btn {
+    position: absolute;
+    bottom: 0;
+    right: 7%;
+    width: 36%;
+    height: 11%;
+    border-radius: 2.2vw 0 2.2vw 0;
+    background-color: black;
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    border: none;
 }

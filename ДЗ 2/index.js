@@ -1,4 +1,17 @@
-let name = prompt("Ваше имя?"),
-age = prompt('Ваш возраст?');
+// let name = prompt("Ваше имя?"),
+// age = prompt('Ваш возраст?');
  
-alert(`Приветствую, ${name}, Ваш возраст в годах: ${age}`);
+// alert(`Приветствую, ${name}, Ваш возраст в годах: ${age}`);
+
+
+const name = prompt("Имя"),
+age = prompt("Возраст");
+
+console.log(`привет ${name} тебе ${age}`);
+alert(`привет ${name} tebe ${age}`);
+
+
+
+let myLet = 50;
+myLet = 500;
+myLet = 500;
