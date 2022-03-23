@@ -1,11 +1,8 @@
-// let name = prompt("Ваше имя?"),
-// age = prompt('Ваш возраст?');
- 
-// alert(`Приветствую, ${name}, Ваш возраст в годах: ${age}`);
 
+const firstValue = +prompt("Первое число"),
+secondValue = +prompt("Второе число"),
+operator = prompt("Оператор");
 
-const name = prompt("Имя"),
-age = prompt("Возраст");
+let calcResult = Number()
 
-console.log(`привет ${name} тебе ${age}`);
-alert(`привет ${name} tebe ${age}`);
+alert(`${firstValue} ${operator} ${secondValue}`);
