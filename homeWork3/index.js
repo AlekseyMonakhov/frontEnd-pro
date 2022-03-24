@@ -2,11 +2,11 @@ let firstValue = parseInt(prompt("Значение 1")),
 secondValue = parseInt(prompt("Значение 2")),
 operator = prompt("Оператор");
 
-if (Boolean(firstValue) === false) {
+if (!firstValue) {
     alert('empty first value field');
     firstValue = null;
 }
-if (Boolean(secondValue) === false) {
+if (!secondValue) {
     alert('empty second value field');
     secondValue = null;
 }
