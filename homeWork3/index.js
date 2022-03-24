@@ -20,10 +20,10 @@ switch (operator) {
     }
         
     default: {
-        alert(`Не верно указан оператор`);
+        alert(`"Мы не можем выполнить действие с оператором ${operator}`);
         break;
     }
 }
 
-console.log(`${firstValue} ${operator} ${secondValue} = ${result} `);
+console.log(`Результат: ${firstValue} ${operator} ${secondValue} = ${result} `);
   
