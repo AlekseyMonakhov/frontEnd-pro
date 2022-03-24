@@ -26,6 +26,7 @@ switch (operator) {
     }
     case "/": {
         result = firstValue / secondValue;
+        break
     }
         
     default: {
