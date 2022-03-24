@@ -20,7 +20,7 @@ switch (operator) {
     }
         
     default: {
-        alert(`"Мы не можем выполнить действие с оператором ${operator}`);
+        alert(`Мы не можем выполнить действие с оператором ${operator}`);
         break;
     }
 }
