@@ -1434,7 +1434,7 @@ const todos = [
     }
   ];
 
-  let userFind = users.find(user => user.company.bs === "transition cutting-edge web services");
+  let userFind = users.find(user => user.company.bs.includes("web"));
   let userId = userFind.id;
   let toDoUndone = todos.filter(action => action.userId === userId && action.completed === false );
   console.log(userId);
