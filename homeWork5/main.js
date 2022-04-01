@@ -8,8 +8,8 @@ const movies = [
 const cart = [];
 
 function addToCart(id) {
-    let getId = movies.find(movies => id === movies.id);
-    if (!getId){
+    let getId = movies.find(movi => id === movi.id);
+    if (!getId){    
         alert("wrong id");
         return;
     }
@@ -24,4 +24,5 @@ function printCheck() {
 
 addToCart(2);
 addToCart(4);
+addToCart(3);
 printCheck();

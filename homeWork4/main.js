@@ -1435,8 +1435,16 @@ const todos = [
   ];
 
   let userFind = users.find(user => user.company.bs.includes("web"));
-  // let userId = userFind.id;
+  let userId = userFind.id;
   let toDoUndone = todos.filter(action => action.userId === userFind.id && action.completed === false );
-  console.log(userFind.id);
+  console.log(userId);
   console.log(toDoUndone);
   
+  function factorial(number) {
+    let result = number;
+    for (let index = 1; index < number; index++) {
+        result *= index;
+    }
+    return result;
+  }
+  console.log(factorial(9));   
