@@ -14,6 +14,6 @@ function isEven(number){
 
 function isPrime(number){
     for (let i = 0; i < number; i++) {
-        return number % i === 0 ? '`Число ${number} простое' : `Число ${number} не простое`;
+        return number % i === 0 ? '`Число ${number} непростое' : `Число ${number} простое`;
     }
 }
