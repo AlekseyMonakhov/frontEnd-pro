@@ -12,8 +12,9 @@ function isEven(number){
     return number % 2 === 0 ? `Число ${number} четное` : `Число ${number} не четное`;
 }
 
-function isPrime(number){
-    for (let i = 0; i < number; i++) {
-        return number % i === 0 ? '`Число ${number} непростое' : `Число ${number} простое`;
+function isPrime(number) {
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) return `Число ${number} непростое`;
     }
-}
+    return `Число ${number} простое`;
+  }
