@@ -3,7 +3,7 @@ function checkNumber() {
     if (inputNumber) {
         let even = isEven(inputNumber);
         let prime = isPrime(inputNumber);
-            alert(`${even} а также ${prime}`);
+        alert(`${even} а также ${prime}`);
     }else {
         alert("Не правильно указанно число");
     }
