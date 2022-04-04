@@ -3,7 +3,7 @@ const itSchool = {
     description: "Simle online school description",
     maxGroupCount: 5,
     maxStudentsCountPerGroup: 12,
-    availabelCourses: ["Front-end Basic", "Front-end-pro" ],
+    availabelCourses: ["Front-end Basic", "Front-end Pro"],
     startedGroups: [],
 
 
@@ -30,12 +30,12 @@ const itSchool = {
 
 
     endLearningGroup(courseName) {
-        if (this.startedGroups.some((startedGroup) =>startedGroup.courseName === courseName )) {
-            this.startedGroups = this.startedGroups.filter((startedGroup) =>startedGroup.courseName !== courseName );
+        if (this.startedGroups.some((startedGroup) => startedGroup.courseName === courseName )) {
+            this.startedGroups = this.startedGroups.filter((startedGroup) => startedGroup.courseName !== courseName );
             this.dispatch(`GROUP_ENDED`)
-            console.log(`Group ${courseName}Finished`);
+            console.log(`Group ${courseName} Finished`);
         }else {
-            console.log(`You are tryinf to finish not existing group`);
+            console.log(`You are trying to finish not existing group`);
         }
     },
 
@@ -66,5 +66,5 @@ itSchool.startLearningGroup("Front-end Basic", 13);
 itSchool.startLearningGroup("Python Basic", 6);
 
 // конец групп
-itSchool.endLearningGroup("Front-end Basic");
+itSchool.endLearningGroup("Front-end Pro");
 itSchool.endLearningGroup("Python Basic");
