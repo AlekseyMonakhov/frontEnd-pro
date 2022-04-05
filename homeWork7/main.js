@@ -230,32 +230,12 @@ const users = [
       }
     }
   ];
-//   function makeWorker() {
-//     let name = "Pete";
-  
-//     return function() {
-//       alert(name);
-//     };
-//   }
-  
-//   let name = "John";
-  
-//   // create a function
-//   let work = makeWorker();
-  
-//   // call it
-//   work(); // что будет показано? "Pet
-//   function sum(a) {
-//       return function(b){
-//           return a + b;
-//       }
-//   }
-//   alert(sum(3)(5))
 
+const findUser = (userObj) => {
+  let key = Object.keys(userObj);
+  return users.find((user) => user[key] === userObj[key]);
+}
 
-function ask(question, yes, no) {
-    if (confirm(question)) yes()
-    else no();
-  }
-let a =(question) => confirm(question) ? alert("Хорошо"):alert("Ждем пока выростешь");
-a(`Вам есть 18?`)
+console.log(findUser({id: 2}));
+console.log(findUser({username: "Antonette"}));
+console.log(findUser({email: "Shanna@melissa.tv"}));
