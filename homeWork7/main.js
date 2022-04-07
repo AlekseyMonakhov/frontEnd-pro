@@ -233,9 +233,26 @@ const users = [
 
 const findUser = (userObj) => {
   let key = Object.keys(userObj);
+  console.log(userObj[key]);
   return users.find((user) => user[key] === userObj[key]);
 }
 
 console.log(findUser({id: 2}));
 console.log(findUser({username: "Antonette"}));
 console.log(findUser({email: "Shanna@melissa.tv"}));
+
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+
+// let c = function multiplyNumeric(obj) {
+//   for (let key in obj) {
+//     if(typeof obj[key] === "number") {
+//       obj[key] *= 2;
+//     }
+//   }
+// }
+// c(menu);
+// console.log(menu);
