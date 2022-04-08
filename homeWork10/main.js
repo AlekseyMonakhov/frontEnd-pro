@@ -2,7 +2,7 @@ const arr = [1,2,3,4,5,6,7,8,9,10];
 
 function chunk(arr, chunkSize) {
   newArr = [];
-  if (!chunkSize || chunkSize > arr.length) {
+  if (!chunkSize) {
     alert(`Invalid , value cannot = ${chunkSize}`);
   } else if (chunkSize === 1) {
     return arr;
