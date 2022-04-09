@@ -13,7 +13,14 @@ function chunk(arr, chunkSize) {
     }
     return newArr;
   }
+  // while (arr.length > 0) {
+  //   newArr.push(arr.splice(0, chunkSize))
+  // }
+  // return newArr;
 }
 
 
-console.log(chunk(arr, 0));
+console.log(chunk(arr, 3));
+
+
+// Первый метод не меняет исходный массив , второй меняет 
