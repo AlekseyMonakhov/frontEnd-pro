@@ -8,13 +8,14 @@ function chunk(arr, chunkSize) {
     return arr;
   }
   else {
-    for (let i = 0; i < arr.length; i += chunkSize) {
-      newArr.push(arr.slice(i, i+chunkSize));
+    while (arr.length > 0) {
+      newArr.push(arr.splice(0, chunkSize))
     }
     return newArr;
   }
-  // while (arr.length > 0) {
-  //   newArr.push(arr.splice(0, chunkSize))
+
+  // for (let i = 0; i < arr.length; i += chunkSize) {
+  //   newArr.push(arr.slice(i, i+chunkSize));
   // }
   // return newArr;
 }
