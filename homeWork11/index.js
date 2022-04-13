@@ -38,7 +38,7 @@ const itSchool = {
     },
 
     doneLesson(courseName) {
-        if (this.startedGroups.find((startedGroup) => startedGroup.courseName === courseName)) {
+        if (this.startedGroups.some((startedGroup) => startedGroup.courseName === courseName)) {
             this.startedGroups.find((startedGroup) => startedGroup.courseName === courseName).passedLessons++;
             this.dispatch(this.supportedEventTypes.DONE_LESSON, courseName);
         }else {
