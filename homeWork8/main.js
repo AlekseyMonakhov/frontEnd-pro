@@ -25,5 +25,5 @@ function carCreate () {
   cars.push(myCar);
 }
   
-carCreate(2);
+carCreate();
 console.log(cars);
