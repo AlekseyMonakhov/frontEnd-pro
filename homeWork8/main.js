@@ -26,6 +26,18 @@ function carCreate (num) {
   
 carCreate(2);
 console.log(cars);
+
+
+
+
+
+
+
+
+
+
+
+
 //   do {
 //     let myCar = {};
 //     for (key in myCars) {
