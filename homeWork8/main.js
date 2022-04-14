@@ -10,12 +10,12 @@ function carCreate () {
     color: ["black", "white", "pink"],
   };
   let myCar = {}
-    for (key in myCars) {
-      do
-        myCar[key] = prompt(`Chose from available options what ${key}: ${myCars[key]}`);
-      while(!myCars[key].includes(myCar[key]));
-  }
-  cars.push(myCar);
+  for (key in myCars) {
+    do
+      myCar[key] = prompt(`Chose from available options what ${key}: ${myCars[key]}`);
+    while(!myCars[key].includes(myCar[key]));
+}
+cars.push(myCar);
 }
 carCreate();
 console.log(cars);
