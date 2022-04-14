@@ -1,7 +1,7 @@
 
 cars = [];
 
-function carCreate () {
+function carCreate (num) {
   
   let myCars = { 
     mark: ["BWM", "Toyota", "MAZDA"],
@@ -11,6 +11,7 @@ function carCreate () {
     color: ["black", "white", "pink"],
   };
   let myCar = {};
+  do {
     for (key in myCars) {
       do {
         myCar[key] = prompt(`Chose from available options what ${key}: ${myCars[key]}`);
@@ -22,8 +23,9 @@ function carCreate () {
       }
       while(!myCars[key].includes(myCar[key]));
     }
-  cars.push(myCar);
-}
+    cars.push(myCar);
+  }while (--num);
+};
   
-carCreate();
+carCreate(2);
 console.log(cars);
