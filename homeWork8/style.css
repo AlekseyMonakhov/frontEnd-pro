@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(180deg, #C6C6C6 0%, #000000 100%);
+}
+.btn {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    width: 15vw;
+    height: 10vh;
+    border: none;
+}
