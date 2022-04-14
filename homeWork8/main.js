@@ -2,6 +2,7 @@
 cars = [];
 
 function carCreate () {
+  
   let myCars = { 
     mark: ["BWM", "Toyota", "MAZDA"],
     model: ["X5", "X6", "X7"],
@@ -9,13 +10,20 @@ function carCreate () {
     price: ["High", "Low", "Medium"],
     color: ["black", "white", "pink"],
   };
-  let myCar = {}
-  for (key in myCars) {
-    do
-      myCar[key] = prompt(`Chose from available options what ${key}: ${myCars[key]}`);
-    while(!myCars[key].includes(myCar[key]));
+  let myCar = {};
+    for (key in myCars) {
+      do {
+        myCar[key] = prompt(`Chose from available options what ${key}: ${myCars[key]}`);
+        if(myCars[key].includes(myCar[key])) {
+          alert(`${key} aded`);
+        }else {
+          alert(`invalid ${key}: availabel are next - ${myCars[key]}`);
+        }
+      }
+      while(!myCars[key].includes(myCar[key]));
+    }
+  cars.push(myCar);
 }
-cars.push(myCar);
-}
-carCreate();
+  
+carCreate(2);
 console.log(cars);
