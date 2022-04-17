@@ -1434,17 +1434,28 @@ const todos = [
     }
   ];
 
-  let userFind = users.find(user => user.company.bs.includes("web"));
-  let userId = userFind.id;
-  let toDoUndone = todos.filter(action => action.userId === userFind.id && action.completed === false );
-  console.log(userId);
-  console.log(toDoUndone);
+  // let userFind = users.find(user => user.company.bs.includes("web"));
+  // let userId = userFind.id;
+  // let toDoUndone = todos.filter(action => action.userId === userFind.id && action.completed === false );
+  // console.log(userId);
+  // console.log(toDoUndone);
   
-  function factorial(number) {
-    let result = number;
-    for (let index = 1; index < number; index++) {
-        result *= index;
+
+  let usered = users.find(users => users.company.bs.includes("web") === true);
+
+  //find and push in array uncompleted todos tasks
+  
+    let arr = todos.filter(todos => todos.userId === usered.id && todos.completed === false);
+  
+  //display result 
+  
+    console.log(`Number of uncompleted todos tasks: ${arr.length}.`);
+  
+    for(let i = 0; i < arr.length; i++ ){
+      console.log(`Title: ${arr[i].title}`);
     }
-    return result;
-  }
-  console.log(factorial(9));   
+  
+  
+  
+    console.log(users);
+    console.log(todos);
