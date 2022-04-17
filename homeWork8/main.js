@@ -16,7 +16,7 @@ function carCreate (num) {
       if (availabelCars[key].includes(value)) {
         myCar[key] = value;
       } else {
-        alert(`Wrong value: ${key}`)
+        alert(`Wrong value: ${key}`);
       }
     }
     cars.push(myCar);    
