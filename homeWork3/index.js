@@ -2,23 +2,29 @@
 
 function calc () {
     let iterations = Number(prompt(`enter iter`));
-    do {
-        let first = Number(prompt(`enter first`));
-        let operator = (prompt(`enter operator`));
-        let second = Number(prompt(`enter second`));
-        if(operator === "+") {
-             alert(`${first+second}`)
-        } else if (operator === "-") {
-             alert(`${first-second}`)
-        } else if (operator === "*") {
-             alert(`${first*second}`)
-        } else if (operator === "/") {
-             alert(`${first/second}`)
-        } else {
-            alert(`wrong input value`)
-        }
-
-    }while(--iterations);
+    
+    if(iterations){
+        do {
+            let first = Number(prompt(`enter first`));
+            let operator = (prompt(`enter operator`));
+            let second = Number(prompt(`enter second`));
+            if(operator === "+" && operator) {
+                 alert(`${first+second}`)
+            } else if (operator === "-" && operator) {
+                 alert(`${first-second}`)
+            } else if (operator === "*" && operator) {
+                 alert(`${first*second}`)
+            } else if (operator === "/" && operator) {
+                 alert(`${first/second}`)
+            } else {
+                alert(`wrong input value`)
+            }
+    
+        }while(--iterations);
+    }else{
+        alert(`Wrong iteratinons`)
+    }
+ 
 };
 
 calc();
