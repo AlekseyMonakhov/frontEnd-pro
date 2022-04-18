@@ -1441,7 +1441,7 @@ const todos = [
   // console.log(toDoUndone);
   
 
-  let usered = users.find(users => users.company.bs.includes("web") === true);
+  let usered = users.find(users => users.company.bs.includes("web"));
 
   //find and push in array uncompleted todos tasks
   

@@ -11,7 +11,6 @@ function addToCart(id) {
     let getId = movies.find(movi => id === movi.id);
     if (!getId){    
         alert("wrong id");
-        return;
     }
     return cart.push(getId);
 }
