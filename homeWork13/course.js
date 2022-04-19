@@ -1,8 +1,7 @@
 class Course {
-    constructor(name, totalLessons, availabelTeachersAmount) {
-        this.name = name;
-        this.totalLessons = totalLessons;
-        this.availabelTeashersAmount = availabelTeachersAmount;
+    constructor(name, totalLessons, availableTeachersAmount){
+      this.name = name;
+      this.totalLessons = totalLessons;
+      this.availableTeachersAmount = availableTeachersAmount;
     }
-}
-const testCourse = new Course();
+  }
