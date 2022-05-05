@@ -21,11 +21,13 @@ btn.style.height = btn.style.width;
 btn.innerText = `Click on me`;
 btn.type = `reset`;
 
-
-form.appendChild(h1);
-form.appendChild(p);
-form.appendChild(input);
-form.appendChild(btn);
+function append () {
+  for (let index = 0; index < arguments.length; index++) {
+   console.log(arguments[index]);
+   form.appendChild(arguments[index]);
+  }
+};
+append(h1, p, input, btn);
 
 document.body.appendChild(form);
 
