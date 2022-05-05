@@ -16,8 +16,8 @@ p.textContent =
 то будет выведен alert c введенным в поле значением 
 и после закрытия alert'а поле будет очищаться.`;
 input.placeholder = `Type something`;
-btn.style.width = `200px`;
-btn.style.height = `40px`;
+btn.style.width = `15vw`;
+btn.style.height = `5vw`;
 btn.innerText = `Click on me`;
 btn.type = `reset`;
 
