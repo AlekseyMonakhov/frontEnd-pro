@@ -500,9 +500,11 @@
 // When true, moving the mouse draws on the canvas
 // When true, moving the mouse draws on the canvas
 
-const title = document.querySelector('h1');
-const colors = ['#D705F2', '#3805F2', '#68F205', '#EAF205', '#F20505'];
+// const title = document.querySelector('h1');
+// const colors = ['#D705F2', '#3805F2', '#68F205', '#EAF205', '#F20505'];
 
-document.onmousemove = function () {
-  title.style.color = colors[Math.floor(Math.random() * colors.length)];   
-};
+// document.onmousemove = function () {
+//   title.style.color = colors[Math.floor(Math.random() * colors.length)];   
+// };
+const result = 1.1e2;
+console.log(result);
