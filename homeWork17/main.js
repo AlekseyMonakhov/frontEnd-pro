@@ -1,4 +1,4 @@
-// first tast
+// -------------------------first task
 let arr = [1,2,14,14,15,133,2,8,12,19,8,13,123,1,2,3,4,5,6,7,7,8,9];
 function arrFilt(arr) {
   return arr
@@ -8,7 +8,7 @@ function arrFilt(arr) {
 
 
 console.log(arrFilt(arr));
-// second tast
+// ---------------------------------------second task
 
 Number.prototype.plus = function (value) {
 	return this + value;
