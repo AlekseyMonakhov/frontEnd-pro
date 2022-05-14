@@ -1,89 +1,42 @@
-class Todolist {
+class ToDoList {
   constructor() {
-      this.todos = [];
+    this.toDos = [];
   }
   add(todo) {
-      this.todos.push(new TodoITtem(todo));
+    this.toDos.push(new TodoITtem(todo));
   }
 }
-
 class TodoITtem {
   constructor(todo) {
-      this.todo = todo;
+    this.todo = todo;
   }
 }
+let toDoList = new ToDoList();
 
-let todoList = new Todolist();
-
-let inp = document.querySelector('.addToDo__inp');
-
-
-function todolist() {
-  let newDiv = document.createElement('div');
-  let newDescr = document.createElement('div');
-  let checkBox = document.createElement('div');
-  let inpCheckBox = document.createElement('input:checkbox');
-  let inpChecked = document.createElement('label')
-  let todo = inp.value;
-
-  if (todo) {
-
-      newDiv.classList.add('item');
-      document.querySelector('.addToDo').after(newDiv);
-
-      newDescr.classList.add('item__descr');
-      newDiv.append(newDescr);
-      newDescr.innerText = todo;
-
-      checkBox.classList.add('checkbox__block');
-      newDiv.append(checkBox);
-
-      inpCheckBox.classList.add('box_checkbox');
-      inpChecked.append(inpCheckBox);
-
-
-      inpChecked.classList.add('checked_box');
-      checkBox.append(inpChecked);
-
-
-      newDescr.innerText ? todoList.add(todo) : null;
-      console.log(todoList.todos);
-
-      inp.value = '';
-
-  }
-
-
-  newDiv.addEventListener('click', (event) => {
-      if (event.target.matches('.checkbox__block')) {
-          newDescr.style.textDecoration = 'line-through';
-          inpChecked.style.display = 'block';
-         
-
-
-
-      } else if (event.target.matches('.checked_box')) {
-          checkBox.append(inpChecked);
-          inpChecked.style.display = 'none';
-          newDescr.style.textDecoration = 'none';
-
-      }
-  })
+const input = document.querySelector(`.add-item`);
+const btn = document.getElementById(`btn`);
+const add = document.querySelector(`.container`);
+let i = 0;
+function todoListFunc() {
+  let div = document.createElement(`div`);
+  let label = document.createElement(`label`);
+  let check = document.createElement('input');
+  div.classList.add(`toDo`);
+  label.textContent = input.value;
+  check.setAttribute(`type`, `checkbox`);
+  label.setAttribute(`for`, `box${i}`)
+  check.setAttribute(`id`, `box${i}`);
+  div.appendChild(check);
+  div.appendChild(label);
+  add.appendChild(div);
+  input.value = '';
 }
-
-document.querySelector('.addToDo__btn').addEventListener('click', () => {
-
-  todolist();
-})
-
-document.querySelector('.addToDo__inp').addEventListener('keydown', (event) => {
-  if (event.keyCode == 13) {
-
-      todolist();
+btn.addEventListener(`click`, (event) => {
+  if(input.value) {
+    toDoList.add(input.value);
+    console.log(toDoList.toDos);
+    todoListFunc();
+    return ++i;
   }
-})
-
-
-
-
+});
 
