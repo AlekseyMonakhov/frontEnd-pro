@@ -1,19 +1,26 @@
-let calc = [];
+const btnContainer = document.querySelector(`.buttons`);
+const output = document.querySelector(`.calc-screen output`);
 
 
-
-const digit = [`1`,`2`,`3`,`4`,`5`,`6`,`7`,`8`,`9`,`.`,];
-const action = [`-`, `+`, `*`, `/`];
-
-
-const out = document.querySelector(`.calc-screen p`);
-document.querySelector(`.buttons`).addEventListener(`click`, (event) => {
-    let key = event.target.textContent;
-    if(digit.includes(key)){
-        calc += key;
-        console.log(calc);
+btnContainer.addEventListener(`click`, function(event) {
+    if(!event.target.classList.contains(`btn`)) {
+        return;
     }
+    
+    const value = event.target.textContent;
+    
+    switch (value) {
+        case `ac`:
+            output.textContent = '';
+            break;
+    
+        case `=`:
+            if(output.innerText.search(/[^0-9*/+-.]/mi)!= -1) {
+                return
+            }
+            output.textContent = eval(output.textContent);
+            break;
+        default: 
+            output.textContent += value;
+    } 
 });
-
-
-

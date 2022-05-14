@@ -506,5 +506,3 @@
 // document.onmousemove = function () {
 //   title.style.color = colors[Math.floor(Math.random() * colors.length)];   
 // };
-const result = 1.1e2;
-console.log(result);

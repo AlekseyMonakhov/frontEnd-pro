@@ -9,8 +9,10 @@ body {
     align-items: center;
 }
 .calc {
-    width: 300px;
-    height: 500px;
+    width: fit-content;
+    max-width: 300px;
+    height: fit-content;
+    max-height: 400px;
     border-radius: 20px;
     background: black;
     color: white;
@@ -21,36 +23,38 @@ body {
 }
 
 .calc-screen {
-    max-height: 100px;
+    max-height: 20vh;
     padding: 20px 10px 10px;
     display: grid;
     justify-items: end;
     align-items: end;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
     overflow-x: auto;
     overflow-y: hidden;
 }
 
-.calc-screen p {
+.calc-screen output {
     text-align: right;
-    font-size: 4rem;
+    min-height: 2rem;
+    font-size: 2rem;
     user-select: none;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 7px;
+    gap: 1vw;
 }
 
 
 .btn {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background: #333;
     border-radius: 50%;
-    text-align: center;
-    line-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
     cursor: pointer;
     user-select: none;
@@ -77,4 +81,10 @@ body {
 .btn.bg-orange {
     background: #ff9501;
 }
-
+@media (max-width: 680px) {
+    .calc {
+        width: fit-content;
+        max-width: 80vw;
+        max-height: 50vh;
+    }
+}
