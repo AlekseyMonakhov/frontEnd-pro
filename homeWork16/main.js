@@ -24,12 +24,17 @@ function todoListFunc() {
   div.classList.add(`toDo`);
   label.textContent = input.value;
   check.setAttribute(`type`, `checkbox`);
-  label.setAttribute(`for`, `box${i}`)
+  label.setAttribute(`for`, `box${i}`);
   check.setAttribute(`id`, `box${i}`);
   div.appendChild(check);
   div.appendChild(label);
   add.appendChild(div);
   input.value = '';
+  check.addEventListener(`click`, (event)=>{
+    let inputId = event.target.getAttribute(`id`);
+    let label = add.querySelector(`[for=${inputId}]`);
+    label.classList.toggle(`done`);
+  });
 }
 btn.addEventListener(`click`, (event) => {
   if(input.value) {
@@ -39,4 +44,3 @@ btn.addEventListener(`click`, (event) => {
     return ++i;
   }
 });
-

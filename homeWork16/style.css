@@ -39,6 +39,6 @@
     border-bottom: 1px solid;
 }
 
-input[type="checkbox"]:checked+label {
+.done {
    text-decoration: line-through;
 }
