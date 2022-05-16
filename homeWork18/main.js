@@ -17,9 +17,6 @@ container.addEventListener(`click`, (event) => {
     case `reset`:
       counter = 0;
       break;
-
-    default:
-      break;
   }
   out.textContent = counter;
   console.log(counter);
