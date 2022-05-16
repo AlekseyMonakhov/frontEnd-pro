@@ -14,7 +14,7 @@ class TodoITtem {
 let toDoList = new ToDoList();
 
 const input = document.querySelector(`.add-item`);
-const btn = document.getElementById(`btn`);
+const btn = document.querySelector(`#btn`);
 const add = document.querySelector(`.container`);
 let i = 0;
 function todoListFunc() {
@@ -34,6 +34,8 @@ function todoListFunc() {
     let inputId = event.target.getAttribute(`id`);
     let label = add.querySelector(`[for=${inputId}]`);
     label.classList.toggle(`done`);
+    console.log(inputId);
+    console.log(label);
   });
 }
 btn.addEventListener(`click`, (event) => {
