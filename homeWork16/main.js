@@ -43,6 +43,6 @@ btn.addEventListener(`click`, (event) => {
     toDoList.add(input.value);
     console.log(toDoList.toDos);
     todoListFunc();
-    return ++i;
+    ++i;
   }
 });
