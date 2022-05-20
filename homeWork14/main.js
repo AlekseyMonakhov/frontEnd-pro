@@ -8,14 +8,19 @@ let operator = [`/`, `*`, `+`, `-`,`=`];
 // формула не должна начинатся или заканчиватся оператором 
 // не должно быть два оператора подряд или (оператор не может быть отдельным елементом массива)
 // number может заканчиватся оператором , в намбер может быть только одна точка
+function clearAll(event) {
+    if(event.target.classList.contains(`ac`)) {
+        math.length = 0;
+        result = 0;
+        number = ``;
+        console.log(math, number);
+    }
+}
 function calc(event) {
-
-};
-
-
-btnContainer.addEventListener(`click`, (event) => {
-        
     let inputValue = event.target.textContent;
+    if(inputValue.search(/[^0-9*/+-.=]/mi)!= -1) {
+        return;
+    }
 
     if(!event.target.classList.contains(`btn`)){
         return;
@@ -28,7 +33,7 @@ btnContainer.addEventListener(`click`, (event) => {
         return;
         }
 
-        if(event.target.classList.contains(`operator`) ) {
+        if(event.target.classList.contains(`operator`)) {
             math.push(number.slice(0,-1));
             math.push(number.slice(-1));
             number = ``;
@@ -52,12 +57,20 @@ btnContainer.addEventListener(`click`, (event) => {
         }
     }
     
-    if(event.target.classList.contains(`equal`)) {
+    if(event.target.classList.contains(`equal`) && math.some((el) => operator.slice(0,-1).includes(el))) {
+      
         result = eval(math.join(``).slice(0,-1));
         math.length = 0;
         math[0] = result;
         console.log(result);
         console.log(math);
     }
+};
+
+
+btnContainer.addEventListener(`click`, (event) => {
+        
+    calc(event);
+    clearAll(event);
     
 });
