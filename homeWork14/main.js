@@ -56,7 +56,7 @@ function calc(event) {
         }
     }
     
-    if(event.target.classList.contains(`equal`)) {
+    if(event.target.classList.contains(`equal`) && math.some((el) => operator.slice(0,-1).includes(el))) {
         result = eval(math.join(``).slice(0,-1));
         output.textContent = math.join(``) + result;
         math.length = 0;
