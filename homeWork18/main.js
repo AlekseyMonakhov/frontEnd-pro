@@ -19,5 +19,5 @@ container.addEventListener(`click`, (event) => {
       break;
   }
   out.textContent = counter;
-  console.log(counter);
+  console.log(typeof(counter));
 });
