@@ -56,12 +56,11 @@ function calc(event) {
         }
     }
     
-    if(event.target.classList.contains(`equal`) && math.some((el) => operator.slice(0,-1).includes(el))) {
-      
+    if(event.target.classList.contains(`equal`)) {
         result = eval(math.join(``).slice(0,-1));
+        output.textContent = math.join(``) + result;
         math.length = 0;
         math[0] = result;
-        output.textContent = math.join(``);
     }
 };
 
