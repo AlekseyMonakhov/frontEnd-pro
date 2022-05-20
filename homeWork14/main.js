@@ -10,7 +10,6 @@ function clearAll(event) {
         math.length = 0;
         result = 0;
         number = ``;
-        console.log(math, number);
         output.textContent = math.join(``);
     }
 }
@@ -62,8 +61,6 @@ function calc(event) {
         result = eval(math.join(``).slice(0,-1));
         math.length = 0;
         math[0] = result;
-        console.log(result);
-        console.log(math);
         output.textContent = math.join(``);
     }
 };
