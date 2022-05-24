@@ -25,43 +25,70 @@ function calc(event) {
     };
     
     number += inputValue;
-    output.textContent = number;
-    if(!result) {
-        if(operator.includes(number)) {
+    output.textContent = math.join(``) + number;
+    if(operator.includes(number)) {
+        if(math.length) {
+            math[math.length-1] = number;
+        }
         number = ``;
-        return;
-        }
+        console.log(math);
+    }
 
-        if(event.target.classList.contains(`operator`)) {
-            math.push(number.slice(0,-1));
-            math.push(number.slice(-1));
-            number = ``;
-            console.log(math);
-        }
-    }else {
-        if(operator.includes(math[math.length-1]) && operator.includes(number)) {
-            number = ``;
-            return;
-        }
-        if(event.target.classList.contains(`operator`) && number.length === 1) {
-            math.push(number);
-            number = ``;
-            console.log(math);
-        }
-        if(event.target.classList.contains(`operator`) && number.length > 1) {
-            math.push(number.slice(0,-1));
-            math.push(number.slice(-1));
-            number = ``;
-            console.log(math);
-        }
+    console.log(number);
+    if(event.target.classList.contains(`operator`) && number.length > 1){
+        math.push(number.slice(0,-1));
+        math.push(number.slice(-1));
+        number = ``;
+        console.log(math);
     }
-    
-    if(event.target.classList.contains(`equal`) && math.some((el) => operator.slice(0,-1).includes(el))) {
+    if(event.target.classList.contains(`equal`) && math.length) {
         result = eval(math.join(``).slice(0,-1));
-        output.textContent = math.join(``) + result;
+        output.textContent = math.join(``) + result; 
         math.length = 0;
-        math[0] = result;
+        number = result;
+        console.log(math);
     }
+    // if(!result) {
+    //     if(operator.includes(number)) {
+    //     number = ``;
+    //     return;
+    //     }
+
+    //     if(event.target.classList.contains(`operator`) && number.length > 1) {
+    //         math.push(number.slice(0,-1));
+    //         math.push(number.slice(-1));
+    //         number = ``;
+    //         console.log(math);
+    //     }
+    // }else {
+    //     if(operator.includes(math[math.length-1]) && operator.includes(number)) {
+    //         number = ``;
+    //         return;
+    //     }
+    //     if(event.target.classList.contains(`operator`) && number.length === 1 ) {
+    //         math.push(number);
+    //         number = ``;
+    //         console.log(math);
+    //     }
+    //     if(event.target.classList.contains(`operator`) && number.length > 1) {
+    //         math.push(number.slice(0,-1));
+    //         math.push(number.slice(-1));
+    //         number = ``;
+    //         console.log(math);
+    //     }
+    // }
+    
+    // if(event.target.classList.contains(`equal`) && !operator.slice(0,-1).includes(math[1])) {
+    //     math.length = 1;
+    //     console.log(math);
+    //     console.log(math.length);
+    // }
+    // if(event.target.classList.contains(`equal`) && operator.slice(0,-1).includes(math[1])) {
+    //     result = eval(math.join(``).slice(0,-1));
+    //     output.textContent = math.join(``) + result;
+    //     math.length = 0;
+    //     math[0] = result;
+    // }
 };
 
 

@@ -9,8 +9,7 @@ body {
     align-items: center;
 }
 .calc {
-    width: fit-content;
-    max-width: 300px;
+    width: 230px;
     height: fit-content;
     max-height: 400px;
     border-radius: 20px;
