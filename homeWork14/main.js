@@ -48,6 +48,41 @@ function calc(event) {
         number = result;
         console.log(math);
     }
+
+};
+
+
+
+btnContainer.addEventListener(`click`, (event) => {
+        
+    calc(event);
+    clearAll(event);
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // if(!result) {
     //     if(operator.includes(number)) {
     //     number = ``;
@@ -89,13 +124,3 @@ function calc(event) {
     //     math.length = 0;
     //     math[0] = result;
     // }
-};
-
-
-
-btnContainer.addEventListener(`click`, (event) => {
-        
-    calc(event);
-    clearAll(event);
-    
-});
