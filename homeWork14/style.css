@@ -9,7 +9,8 @@ body {
     align-items: center;
 }
 .calc {
-    width: 230px;
+    width: fit-content;
+    max-width: 300px;
     height: fit-content;
     max-height: 400px;
     border-radius: 20px;
@@ -22,11 +23,10 @@ body {
 }
 
 .calc-screen {
-    height: 20%;
+    max-height: 20vh;
+    max-width: max-content;
     padding: 20px 10px 10px;
     display: grid;
-    justify-items: end;
-    align-items: end;
     margin-bottom: 2vh;
     overflow-x: auto;
     overflow-y: hidden;
