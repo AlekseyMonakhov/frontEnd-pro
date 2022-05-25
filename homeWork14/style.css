@@ -19,12 +19,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 18px;
     box-shadow: 4px 4px 4px #4f4f44;
-    overflow: hidden;
 }
 
 .calc-screen {
     max-height: 20vh;
-    max-width: max-content;
     padding: 20px 10px 10px;
     display: grid;
     margin-bottom: 2vh;
@@ -33,6 +31,7 @@ body {
 }
 
 .calc-screen output {
+    max-width: max-content;
     text-align: right;
     min-height: 2rem;
     font-size: 2rem;
