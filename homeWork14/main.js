@@ -52,9 +52,7 @@ function calc(event) {
 };
 
 
-
 btnContainer.addEventListener(`click`, (event) => {
-        
     calc(event);
     clearAll(event);
     

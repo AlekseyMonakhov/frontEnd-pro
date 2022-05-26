@@ -9,10 +9,11 @@ body {
     align-items: center;
 }
 .calc {
-    width: fit-content;
-    max-width: 300px;
-    height: fit-content;
-    max-height: 400px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 40vw;
+    height: 60vh;
     border-radius: 20px;
     background: black;
     color: white;
@@ -22,19 +23,16 @@ body {
 }
 
 .calc-screen {
-    max-height: 20vh;
-    padding: 20px 10px 10px;
     display: grid;
-    margin-bottom: 2vh;
-    overflow-x: auto;
-    overflow-y: hidden;
+    grid-auto-columns: max-content;
+    align-items: center;
+    height: 20vh;
+    padding: 5px;
+    overflow: auto hidden;
 }
 
 .calc-screen output {
-    max-width: max-content;
-    text-align: right;
-    min-height: 2rem;
-    font-size: 2rem;
+    font-size: 5vh;
     user-select: none;
 }
 
@@ -56,6 +54,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     user-select: none;
+    justify-self: center;
 }
 
 .btn:hover {
