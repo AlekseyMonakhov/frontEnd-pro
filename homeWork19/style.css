@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-auto-rows: 50vh;
+    overflow: hidden;
+}
+.container>div {
+    padding: 20px;
+    border: 1px solid;
+}
+input, select {
+    width: auto;
+    padding: 5px;
+    border: 1px solid;
+}
+.shop {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.listCreator {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.listCreator > div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.listCreator > div :first-child {
+    flex-grow: 1;
+}
+.cart-container {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden auto;
+    justify-content: space-around;
+}
+
+.list, .cart, .item {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
