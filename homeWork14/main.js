@@ -61,10 +61,6 @@ btnContainer.addEventListener(`click`, (event) => {
 
 
 
-document.addEventListener(`click`, (event) => {
-    console.log(event.view);
-})
-
 
 
 
