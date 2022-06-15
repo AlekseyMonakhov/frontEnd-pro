@@ -31,9 +31,10 @@ class ListItem {
 			this.id++;
 		}catch(err) {
 			if(err.message.includes(`field`)) {
+				let inputedValue = Object.values({itemName, itemCount, itemUnit}).filter(el => el !== undefined && el !== ``);
 				let itemParagraph = document.createElement(`p`);
 				itemParagraph.classList.add(`error`);
-				itemParagraph.textContent = `not added ${err.message}`;
+				itemParagraph.textContent = `${inputedValue} not added ${err.message}`;
 				div.append(itemParagraph);
 			};
 			if(err.message.includes(`carry`)) {
