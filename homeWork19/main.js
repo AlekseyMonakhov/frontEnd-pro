@@ -90,8 +90,8 @@ function start(list) {
 	list.addItem(`milk`,3);
 	list.addItem(`milk`,3,`pc`);
 	list.addItem(3,`pc`);
-	list.addItem(`milk`,3,`pc`);
-	list.addItem(`milk`,3,`pc`);
+	list.addItem(`whater`,3,`pc`);
+	list.addItem();
 	list.addItem(`milk`,3,`pc`);
 	list.addItem(`milk`,3,`pc`);
 	list.addItem(`milk`,3,`pc`);
@@ -114,6 +114,8 @@ function start(list) {
 
 
 start(list);
+
+console.log(list.items);
 
 
 
