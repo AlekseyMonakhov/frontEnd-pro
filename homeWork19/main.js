@@ -21,7 +21,7 @@ class ListItem {
 				}
 			};
 			if(this.items.length >= this.maxCount) {
-				throw new Error(`to match to carry`);
+				throw new Error(`to match to carry, you cant add more than ${this.maxCount} items`);
 			}
 			let itemParagraph = document.createElement(`p`);
 			itemParagraph.textContent = `${itemName}${itemCount}${itemUnit} was added to list id is ${this.id}`;
