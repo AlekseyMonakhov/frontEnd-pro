@@ -1,0 +1,27 @@
+.items {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+}
+.items p {
+    background-color: rgb(166, 250, 166);
+    width: 50%;
+    border: 5px solid green;
+    border-radius: 20px;
+    padding: 15px;
+}
+p.error {
+    background-color: rgb(237, 133, 133);
+    border-color:  rgb(251, 218, 207);
+}
+p.deleted {
+    background-color: rgb(228, 202, 165);
+    border-color:  black;
+}
+p {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
