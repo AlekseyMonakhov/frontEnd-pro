@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .items {
     display: flex;
     align-items: center;
@@ -15,6 +19,7 @@
 p.error {
     background-color: rgb(237, 133, 133);
     border-color:  rgb(251, 218, 207);
+    height: max-content;
 }
 p.deleted {
     background-color: rgb(228, 202, 165);
