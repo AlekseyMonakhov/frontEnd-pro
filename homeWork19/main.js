@@ -17,7 +17,7 @@ class ListItem {
 				let x = Object.entries({itemName, itemCount, itemUnit}).filter(el => el.includes(``) || el.includes(undefined));
 				let emptyFields = x.flat().filter(el => el !== undefined);
 				if(emptyFields.length) {
-					throw new Error(`${emptyFields.join(`, `)} this field empty`);
+					throw new Error(`${emptyFields.join(`, `)} this ${emptyFields.length>1 ? `fields are`: `field is`}  empty`);
 				}
 			};
 			if(this.items.length >= this.maxCount) {
@@ -116,14 +116,4 @@ function start(list) {
 start(list);
 
 console.log(list.items);
-
-
-
-
-
-
-
-
-
-
 
