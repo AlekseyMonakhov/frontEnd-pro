@@ -116,4 +116,3 @@ function start(list) {
 start(list);
 
 console.log(list.items);
-

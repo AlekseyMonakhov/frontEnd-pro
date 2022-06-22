@@ -28,7 +28,35 @@ carCreate(2);
 console.log(cars);
 
 
+//================================================ANOTHER TRY
+function carMade () {
+  let availabelModels = {
+      Tesla: [`X5`, `X6`,`X7`,`X8`,`X9`,`X10`,],
+      Ford: [`X5`, `X6`,`X7`,`X8`,`X92`,`X10`,],
+      Mus: [`X5`, `X6`,`X7`,`X8`,`X91`,`X10`,],
+      Zaz: [`X5`, `X6`,`X7`,`X8`,`X93`,`X10`,],
+      Bnw: [`X5`, `X6`,`X7`,`X8`,`X94`,`X10`,],
+  }
+  let chose = ``;
+  function hellow() {
+      chose = prompt(Object.keys(availabelModels), `What model`);
+      if(!Object.keys(availabelModels).includes(chose)) hellow();
+  }
+  hellow()
+  if(Object.keys(availabelModels).includes(chose)) {
+      let model = ``;
+      function by () {
+          model = prompt(availabelModels[chose].join(`, `), `enter model you whant`);
+          if(!availabelModels[chose].includes(model)) by();
+      }
+      by()
+      if(availabelModels[chose].includes(model)) {
+          return `Nice choise, you chose ${chose}, model ${model}`
+      }
+  }
 
+}
+console.log(carMade());
 
 
 
