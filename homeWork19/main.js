@@ -72,14 +72,18 @@ class ListItem {
 			this.items.push(newItem);
 			this.id++;
 		} catch (err) {
-			if (err instanceof EmptyFields) {
-				let inputedValue = Object.values({ itemName, itemCount, itemUnit }).filter(el => el !== undefined && el !== ``);
-				err.message = `${inputedValue} not added ${err.message}`;
-				console.log(err);
-			};
-			if (err instanceof MaxItemsCountLimit) {
-				console.log(err);
-			};
+			if(err instanceof EmptyFields || err instanceof MaxItemsCountLimit) {
+				if (err instanceof EmptyFields) {
+					let inputedValue = Object.values({ itemName, itemCount, itemUnit }).filter(el => el !== undefined && el !== ``);
+					err.message = `${inputedValue} not added ${err.message}`;
+					console.log(err);
+				};
+				if (err instanceof MaxItemsCountLimit) {
+					console.log(err);
+				};
+			}else{
+				throw err;
+			}
 		}
 	};
 	removeItem(id) {
@@ -98,7 +102,11 @@ class ListItem {
 			let indexOfRemoveItem = this.items.indexOf(removeItem);
 			this.items.splice(indexOfRemoveItem, 1);
 		} catch (err) {
-			if (err instanceof NotDeleted) console.log(err);
+			if (err instanceof NotDeleted){
+				console.log(err);
+			}else{
+				throw err;
+			}
 		}
 
 	};
@@ -119,7 +127,7 @@ class Item {
 let list = new ListItem(`Shop`, `Leo`, 5);
 
 
-function start(list) {
+function start() {
 	try {
 		list.addItem(`milk`);
 		list.addItem(`milk`, 3);
@@ -153,6 +161,6 @@ function start(list) {
 
 
 
-start(list);
+start();
 
 console.log(list.items);
