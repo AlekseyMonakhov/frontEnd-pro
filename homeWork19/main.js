@@ -10,16 +10,22 @@ class NotDeleted extends Error {
 	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
+		
+	}
+	createErr(message) {
 		let deletedItem = document.createElement(`p`);
 		deletedItem.classList.add(`error`);
 		deletedItem.textContent = message;
 		div.append(deletedItem);
 	}
+	
 };
 class EmptyFields extends Error {
 	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
+	}
+	createErr(message) {
 		let itemParagraph = document.createElement(`p`);
 		itemParagraph.classList.add(`error`);
 		itemParagraph.textContent = message;
@@ -30,6 +36,8 @@ class MaxItemsCountLimit extends Error {
 	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
+	}
+	createErr(message) {
 		let itemParagraph = document.createElement(`p`);
 		itemParagraph.classList.add(`error`);
 		itemParagraph.textContent = message;
@@ -76,9 +84,11 @@ class ListItem {
 				if (err instanceof EmptyFields) {
 					let inputedValue = Object.values({ itemName, itemCount, itemUnit }).filter(el => el !== undefined && el !== ``);
 					err.message = `${inputedValue} not added ${err.message}`;
+					err.createErr(err.message);
 					console.log(err);
 				};
 				if (err instanceof MaxItemsCountLimit) {
+					err.createErr(err.message);
 					console.log(err);
 				};
 			}else{
@@ -103,6 +113,7 @@ class ListItem {
 			this.items.splice(indexOfRemoveItem, 1);
 		} catch (err) {
 			if (err instanceof NotDeleted){
+				err.createErr(err.message);
 				console.log(err);
 			}else{
 				throw err;
