@@ -5,10 +5,10 @@ let div = document.querySelector(`.items`);
 
 
 Error.prototype.createErr = function(message) {
-	let deletedItem = document.createElement(`p`);
-	deletedItem.classList.add(`error`);
-	deletedItem.textContent = message;
-	div.append(deletedItem);
+	let paragraph = document.createElement(`p`);
+	paragraph.classList.add(`error`);
+	paragraph.textContent = message;
+	div.append(paragraph);
 }
 
 class NotDeleted extends Error {
@@ -90,10 +90,10 @@ class ListItem {
 			if (!removeItem) {
 				throw new NotDeleted(`not deleted - no item with this id: ${id}`)
 			};
-			let deletedItem = document.createElement(`p`);
-			deletedItem.classList.add(`deleted`);
-			deletedItem.textContent = `${removeItem.itemName} ${removeItem.itemCount} ${removeItem.itemUnit} was deleted from list`;
-			div.append(deletedItem);
+			let paragraph = document.createElement(`p`);
+			paragraph.classList.add(`deleted`);
+			paragraph.textContent = `${removeItem.itemName} ${removeItem.itemCount} ${removeItem.itemUnit} was deleted from list`;
+			div.append(paragraph);
 
 
 			let indexOfRemoveItem = this.items.indexOf(removeItem);
