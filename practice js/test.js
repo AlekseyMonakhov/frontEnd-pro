@@ -788,7 +788,7 @@
 
 //   } while (--num); 
 // };
-  
+
 // carCreate(2);
 // console.log(cars);
 
@@ -822,3 +822,43 @@
 
 // }
 // console.log(carMade());
+
+// let json = {
+//     "name": "Aleksey",
+//     "lastName": "Leos",
+//     "age": "30",
+// }
+
+// let err = new Error(`erorr`);
+
+
+// class MyError extends Error {
+//     constructor(message) {
+//       super(message);
+//       this.name = this.constructor.name;
+//     }
+//   }
+  
+//   class ValidationError extends MyError { }
+  
+//   class PropertyRequiredError extends ValidationError {
+//     constructor(property) {
+//       super("Нет свойства: " + property);
+//       this.property = property;
+//     }
+//   }
+// try{
+//     throw new MyError(`ell`)
+//     throw new PropertyRequiredError(`Field Name`)
+// }catch(err){
+//     console.log(err.message);
+// }
+
+
+
+// const a = [];
+// console.log(Array.isArray(a));
+
+
+// console.log(Array.from([1,2,3,4,5,6,7,8,9], (x,y) => console.log(x,y)));
+
