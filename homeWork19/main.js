@@ -4,20 +4,19 @@
 let div = document.querySelector(`.items`);
 
 
-
+Error.prototype.createErr = function(message) {
+	let deletedItem = document.createElement(`p`);
+	deletedItem.classList.add(`error`);
+	deletedItem.textContent = message;
+	div.append(deletedItem);
+}
 
 class NotDeleted extends Error {
 	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
-		
 	}
-	createErr(message) {
-		let deletedItem = document.createElement(`p`);
-		deletedItem.classList.add(`error`);
-		deletedItem.textContent = message;
-		div.append(deletedItem);
-	}
+	
 	
 };
 class EmptyFields extends Error {
@@ -25,23 +24,11 @@ class EmptyFields extends Error {
 		super(message);
 		this.name = this.constructor.name;
 	}
-	createErr(message) {
-		let itemParagraph = document.createElement(`p`);
-		itemParagraph.classList.add(`error`);
-		itemParagraph.textContent = message;
-		div.append(itemParagraph);
-	}
 };
 class MaxItemsCountLimit extends Error {
 	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
-	}
-	createErr(message) {
-		let itemParagraph = document.createElement(`p`);
-		itemParagraph.classList.add(`error`);
-		itemParagraph.textContent = message;
-		div.append(itemParagraph);
 	}
 };
 
