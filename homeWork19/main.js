@@ -111,91 +111,95 @@ class Item {
 let list = new ListItem(`Shop`, `Leo`, 5);
 
 
+
+
+
+
+
+
 function start() {
 	try {
 		list.addItem(`milk`, 3, `pc`);
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
-		};
+		}else{
+			throw error;
+		}
 	}
 	try {
-		list.addItem(`milk`);
+		list.addItem(`milk`, 3, `pc`);
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
-		};
+		}else{
+			throw error;
+		}
 	}
 	try {
-		list.addItem(`pc`);
+		list.addItem(`milk`, 3, `pc`);
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
-		};
+		}else{
+			throw error;
+		}
+	}
+	try {
+		list.addItem(`milk`, 3, `pc`);
+	} catch (error) {
+		if(error instanceof MyError) {
+			error.createErr(error.message);
+		}else{
+			throw error;
+		}
 	}
 	try {
 		list.addItem();
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
-		};
+		}else{
+			throw error;
+		}
 	}
 	try {
-		list.addItem(`milk`, 3, `pc`);
+		list.addItem(`1`);
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
-		};
+		}else{
+			throw error;
+		}
 	}
 	try {
-		list.addItem(`milk`, 3, `pc`);
+		list.addItem();
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
-		};
+		}else{
+			throw error;
+		}
 	}
 	try {
-		list.addItem(`milk`, 3, `pc`);
+		list.removeItem();
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
-		};
-	}
-	try {
-		list.addItem(`milk`, 3, `pc`);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		};
-	}
-	try {
-		list.addItem(`milk`, 3, `pc`);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		};
+		}else{
+			throw error;
+		}
 	}
 	try {
 		list.removeItem(1);
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
-		};
+		}else{
+			throw error;
+		}
 	}
-	try {
-		list.removeItem(1);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		};
-	}
-	try {
-		list.removeItem(1);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		};
-	}
+	
 }
 
 
