@@ -56,8 +56,7 @@ class ListItem {
 	}
 	addItem(itemName, itemCount, itemUnit) {
 			if (Object.values({ itemName, itemCount, itemUnit }).includes(``) || Object.values({ itemName, itemCount, itemUnit }).includes(undefined)) {
-				let x = Object.entries({ itemName, itemCount, itemUnit }).filter(el => el.includes(``) || el.includes(undefined));
-				let emptyFields = x.flat().filter(el => el !== undefined);
+				let emptyFields = Object.entries({ itemName, itemCount, itemUnit }).filter(el => el.includes(``) || el.includes(undefined)).flat().filter(el => el !== undefined);
 				let inputedValue = Object.values({ itemName, itemCount, itemUnit }).filter(el => el !== undefined && el !== ``);
 				if (emptyFields.length) {
 					throw new EmptyFields(`${inputedValue} not aded: ${emptyFields.join(`, `)}  ${emptyFields.length > 1 ? `fields are` : `field is`}  empty`);
