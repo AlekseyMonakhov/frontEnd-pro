@@ -77,7 +77,7 @@ class ListItem {
 			let removeItem = this.items.find(el => el.itemId === id);
 
 			if (!removeItem) {
-				throw new NotDeleted(`not deleted - no item with this id: ${id}`)
+				throw new NotDeleted(`${id !== undefined ? `not deleted - no item with this id: ${id}` : `id field is empty`}`);
 			};
 			let paragraph = document.createElement(`p`);
 			paragraph.classList.add(`deleted`);
@@ -182,7 +182,7 @@ function start() {
 		}
 	}
 	try {
-		list.removeItem(1);
+		list.removeItem(44);
 	} catch (error) {
 		if(error instanceof MyError) {
 			error.createErr(error.message);
