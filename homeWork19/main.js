@@ -4,36 +4,36 @@
 let div = document.querySelector(`.items`);
 
 
+const createErr = (message) => {
+		let paragraph = document.createElement(`p`);
+		paragraph.classList.add(`error`);
+		paragraph.textContent = message;
+		div.append(paragraph);
+}
+
 class MyError extends Error{
 	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
 	}
-	createErr(message) {
-		let paragraph = document.createElement(`p`);
-		paragraph.classList.add(`error`);
-		paragraph.textContent = message;
-		div.append(paragraph);
-	};
-
 }
 
 
 class NotDeleted extends MyError {
-	constructor(message) {
-		super(message);
+	constructor(id) {
+		super(`${id !== undefined ? `not deleted - no item with this id: ${id}` : `id field is empty`}`);
 		this.name = this.constructor.name;
 	}
 };
 class EmptyFields extends MyError {
-	constructor(message) {
-		super(message);
+	constructor(inputedValue,emptyFields) {
+		super(`${inputedValue} not aded: ${emptyFields.join(`, `)}  ${emptyFields.length > 1 ? `fields are` : `field is`}  empty`);
 		this.name = this.constructor.name;
 	}
 };
 class MaxItemsCountLimit extends MyError {
-	constructor(message) {
-		super(message);
+	constructor(maxCount) {
+		super(`not added: to match to carry, you cant add more than ${maxCount} items`);
 		this.name = this.constructor.name;
 	}
 };
@@ -56,14 +56,14 @@ class ListItem {
 	}
 	addItem(itemName, itemCount, itemUnit) {
 			if (Object.values({ itemName, itemCount, itemUnit }).includes(``) || Object.values({ itemName, itemCount, itemUnit }).includes(undefined)) {
-				let emptyFields = Object.entries({ itemName, itemCount, itemUnit }).filter(el => el.includes(``) || el.includes(undefined)).flat().filter(el => el !== undefined);
+				let emptyFields = Object.entries({ itemName, itemCount, itemUnit }).filter(el => el.includes(``) || el.includes(undefined)).flat().filter(el => el !== undefined && el !== ``);
 				let inputedValue = Object.values({ itemName, itemCount, itemUnit }).filter(el => el !== undefined && el !== ``);
 				if (emptyFields.length) {
-					throw new EmptyFields(`${inputedValue} not aded: ${emptyFields.join(`, `)}  ${emptyFields.length > 1 ? `fields are` : `field is`}  empty`);
+					throw new EmptyFields(inputedValue,emptyFields);
 				}
 			};
 			if (this.items.length >= this.maxCount) {
-				throw new MaxItemsCountLimit(`not added: to match to carry, you cant add more than ${this.maxCount} items`);
+				throw new MaxItemsCountLimit(this.maxCount);
 			}
 			let itemParagraph = document.createElement(`p`);
 			itemParagraph.textContent = `${itemName}${itemCount}${itemUnit} was added to list id is ${this.id}`;
@@ -76,7 +76,7 @@ class ListItem {
 			let removeItem = this.items.find(el => el.itemId === id);
 
 			if (!removeItem) {
-				throw new NotDeleted(`${id !== undefined ? `not deleted - no item with this id: ${id}` : `id field is empty`}`);
+				throw new NotDeleted(id);
 			};
 			let paragraph = document.createElement(`p`);
 			paragraph.classList.add(`deleted`);
@@ -100,101 +100,41 @@ class Item {
 };
 let list = new ListItem(`Shop`, `Leo`, 5);
 
-
-
-
-
-
-
-
-function start() {
-	try {
-		list.addItem(`milk`, 3, `pc`);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
+function addItem() {
+	const data = [[`milk`, 3, `pc`],[`milk`, 3, `pc`],[`milk`, 3, `pc`],[`milk`, 3, `pc`],[],[``, 3, `pc`],[`milk`, 3, `pc`],[],];
+	for (let index = 0; index < data.length; index++) {
+		const item = data[index];
+		try{
+			list.addItem(...item)
+		}catch(err){
+			if(err instanceof MyError) {
+				createErr(err.message);
+			}else{
+				throw err;
+			}
 		}
 	}
-	try {
-		list.addItem(`milk`, 3, `pc`);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
+};
+function removeItem() {
+	const data = [[1],[2],[44]];
+	for (let index = 0; index < data.length; index++) {
+		const item = data[index];
+		try{
+			list.removeItem(...item)
+		}catch(err){
+			if(err instanceof MyError) {
+				createErr(err.message);
+			}else{
+				throw err;
+			}
 		}
 	}
-	try {
-		list.addItem(`milk`, 3, `pc`);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
-		}
-	}
-	try {
-		list.addItem(`milk`, 3, `pc`);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
-		}
-	}
-	try {
-		list.addItem();
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
-		}
-	}
-	try {
-		list.addItem(`1`);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
-		}
-	}
-	try {
-		list.addItem();
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
-		}
-	}
-	try {
-		list.removeItem();
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
-		}
-	}
-	try {
-		list.removeItem(44);
-	} catch (error) {
-		if(error instanceof MyError) {
-			error.createErr(error.message);
-		}else{
-			throw error;
-		}
-	}
-	
-}
+};
 
 
 
 
-start();
+addItem();
+removeItem();
 
 console.log(list.items);
