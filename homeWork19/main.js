@@ -27,7 +27,7 @@ class NotDeleted extends MyError {
 };
 class EmptyFields extends MyError {
 	constructor(inputedValue,emptyFields) {
-		super(`${inputedValue} not aded: ${emptyFields.join(`, `)}  ${emptyFields.length > 1 ? `fields are` : `field is`}  empty`);
+		super(`${inputedValue} not added: ${emptyFields.join(`, `)}  ${emptyFields.length > 1 ? `fields are` : `field is`}  empty`);
 		this.name = this.constructor.name;
 	}
 };
@@ -136,5 +136,6 @@ function removeItem() {
 
 addItem();
 removeItem();
+
 
 console.log(list.items);
