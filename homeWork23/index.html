@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>HomerWork</title>
+</head>
+<body>
+    <header class="header">
+        <div class="student-name">
+            <h1>Reminders App</h1>
+            <h2>Aleksey Monakhov</h2>
+        </div>
+        <div class="search-container">
+            <input type="text" name="search" id="search" placeholder="Search Something">
+        </div>
+        <div class="github">
+            <a href="https://github.com/AlekseyMonakhov">GitHub repo</a>
+        </div>
+    </header>
+    <main class="task-list">
+        <div class="menu">
+            <div class="filters">
+                <button class="order">Sorting Order:<strong>ASC</strong></button>
+                <button class="order">Show:<strong>only important tasks</strong></button>
+            </div>
+            <div class="remove-comp-tasks">
+                <button class="order">Remove Completed Tasks</button>
+            </div>
+        </div>
+        <div class="todo">
+            <div class="descr-container important">
+                <input type="checkbox" name="done" id="done">
+                <label for="done">Prepare Weekly Report before the Meeting</label>
+            </div>
+            <button class="delete-todo">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="todo">
+            <div class="descr-container important">
+                <input type="checkbox" name="done" id="done1">
+                <label for="done1">Feed Bybochka</label>
+            </div>
+            <button class="delete-todo">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="todo">
+            <div class="descr-container">
+                <input type="checkbox" name="done" id="done2">
+                <label for="done2">Feed Bybochka</label>
+            </div>
+            <button class="delete-todo">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <form action="submit" class="add-todo">
+            <textarea name="todo-description" id="todo-description" cols="30" rows="5" placeholder="Add some todo..." required></textarea>
+            <div class="important-container">
+                <input type="checkbox" name="important" id="make-important">
+                <label for="make-important">Make important</label>
+            </div>
+            <div class="btn-container">
+                <span>Shift+Enter to Submit</span>
+                <button type="submit" class="btn">Create</button>
+            </div>
+        </form>
+    </footer>
+    <script src="./main.js"></script>
+</body>
+</html>
+
+
+

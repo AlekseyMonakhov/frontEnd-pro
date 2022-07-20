@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 2vh;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+    height: 15vh;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    background-color: #2C65A7;
+}
+.search-container {
+    flex-grow: 1;
+    text-align: center;
+}
+.search-container > input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+.github > a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: underline;
+}
+
+.student-name {
+    color: white;
+}
+.student-name :first-child {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+.student-name :last-child {
+    font-size: 1.2rem;
+}
+main {
+    height: 60vh;
+}
+footer {
+    border-top: 2px solid #E9E9E9;
+    height: 20vh;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.add-todo {
+    display: flex;
+    width: 70vw;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+textarea {
+    color: black;
+    width: 100%;
+    margin-bottom: 10px;
+    resize: none;
+    border-radius: 5px;
+}
+.important-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.important-container > input {
+    border-radius: 5px;
+    width: 1rem;
+    height: 1rem;
+}   
+.btn-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.btn-container > span {
+    color: #CCCCCC;
+}
+.btn {
+    color: white;
+    padding: 5px 20px;
+    background: #2C65A7;
+    border-radius: 5px;
+    border: none;
+}
+.task-list { 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    width: 70vw;
+    margin: 0 auto;
+    gap: 10px;
+}
+.menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 20px 0 10px;
+    border-bottom: 1px solid #E9E9E9;
+}
+.menu button {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: .8rem;
+    color: #2C65A7;
+}
+.filters :first-child {
+    margin-right: 5px;
+}
+.menu strong {
+    font-weight: 1000;
+}
+
+.todo {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #F5F5F5;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.todo input[type="checkbox"] {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 10px;
+}
+.todo input[type="checkbox"]::before {
+    content: "";
+    display: block;
+    background-color: #D9D9D9;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.todo .important input[type="checkbox"]::before {
+    background-color: #2C65A7;
+}
+.todo input[type="checkbox"]:checked:before {
+    content: "";
+    background-image: url("./✔️.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.descr-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    max-width: 85%;
+}
+
+.descr-container.important label::after {
+    white-space: pre;
+    content: "\0a Its important";
+    color: #2C65A7;
+    font-size: 1rem;
+}
+button.delete-todo {
+    height: 1.5rem;
+    width: 1.5rem;
+    border: none;
+    background: none;
+    padding: 0;
+}
+button.delete-todo > span {
+    display: block;
+    width: 100%;
+    height: .15rem;
+    background-color: black;
+}
+button.delete-todo :first-child {
+    transform: rotate(45deg);
+}
+button.delete-todo :last-child {
+    transform: rotate(-45deg);
+}
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+}
