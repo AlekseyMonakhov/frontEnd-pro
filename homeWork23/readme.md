@@ -1,1 +1,1 @@
-run my hw by command npm run dev
+run server by command npm run dev
