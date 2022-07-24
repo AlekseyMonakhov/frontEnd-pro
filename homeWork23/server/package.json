@@ -1,0 +1,15 @@
+{
+  "name": "homework23",
+  "version": "1.0.0",
+  "description": "hw23",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx nodemon main.js"
+  },
+  "author": "Leo",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
