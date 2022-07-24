@@ -99,6 +99,7 @@ textarea {
     width: 70vw;
     margin: 0 auto;
     gap: 10px;
+    overflow: auto;
 }
 .menu {
     display: flex;
@@ -145,7 +146,7 @@ textarea {
 }
 .todo input[type="checkbox"]:checked:before {
     content: "";
-    background-image: url("./✔️.svg");
+    background-image: url(./✔️.svg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -184,4 +185,7 @@ button.delete-todo :last-child {
 }
 input[type="checkbox"]:checked + label {
     text-decoration: line-through;
+}
+.hide {
+    display: none;
 }
