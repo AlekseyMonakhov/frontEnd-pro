@@ -1,12 +1,14 @@
 let removeCompletedTodo = document.querySelector("#remove-completed-todo-btn");
 let showImportantTasks = document.querySelector("#show-important-tasks");
 let form = document.querySelector('form.add-todo');
+let searchField = document.querySelector('input#search');
 const BASE_API = 'http://localhost:3001';
 
 
 let todos = [];
 
 showImportantTasks.onclick = () => {
+    showImportantTasks.classList.toggle('active');
     let importantTodos = document.querySelectorAll("div.todo");
 
     importantTodos.forEach(el => {
@@ -26,6 +28,7 @@ removeCompletedTodo.onclick = () => {
         }
     })
 };
+
 function emptyTodos() {
     const todoContainer = document.querySelector('.task-list');
     const clearTodo = todoContainer.querySelectorAll('.todo');
@@ -43,19 +46,22 @@ function emptyTodos() {
     emptyTodos.append(emptyTodosTitle);
     todoContainer.append(emptyTodos);
 }
+
 function removeTodo(id) {
-    fetch(`${BASE_API}/todos/${id}`,{
+    fetch(`${BASE_API}/todos/${id}`, {
         method: "DELETE",
 
     })
-        .then(() => getTodos());
+        .then(() => getTodos())
+        .catch(() => showErr('Cannot delete todo'));
 }
 
-async function changeIsComplited(id) {
+function changeIsComplited(id) {
     fetch(`${BASE_API}/todos/${id}`, {
         method: "PUT",
     })
-        .then(() => getTodos());
+        .then(() => getTodos())
+        .catch(() => showErr('Cannot update todo'));
 }
 
 function renderTodos(todos) {
@@ -70,7 +76,7 @@ function renderTodos(todos) {
         todoDiv.classList.add('todo');
 
         let todoDescrtContainer = document.createElement('div');
-        if(todo.important === true) {
+        if (todo.important === true) {
             todoDescrtContainer.classList.add('important');
         }
         let deleteTodoBtn = document.createElement('button');
@@ -86,7 +92,7 @@ function renderTodos(todos) {
         todoCheckBox.addEventListener('click', () => changeIsComplited(todo.id));
         todoCheckBox.setAttribute('id', `${todo.id}`);
         todoCheckBox.setAttribute('type', 'checkbox');
-        if(todo.done === true) {
+        if (todo.done === true) {
             todoCheckBox.setAttribute('checked', `true`);
         }
         todoCheckBox.setAttribute('name', `${todo.id}`);
@@ -94,29 +100,41 @@ function renderTodos(todos) {
         todoTitle.setAttribute('for', `${todo.id}`);
         todoTitle.textContent = `${todo.description}`;
 
-        todoDescrtContainer.append(todoCheckBox,todoTitle);
-        todoDiv.append(todoDescrtContainer,deleteTodoBtn);
+        todoDescrtContainer.append(todoCheckBox, todoTitle);
+        todoDiv.append(todoDescrtContainer, deleteTodoBtn);
         todoContainer.append(todoDiv);
 
     })
 }
+function showErr(message) {
+    let errContainer = document.createElement('div');
+    let errTitle = document.createElement('p');
+    errContainer.classList.add('error');
+    errTitle.textContent = message;
+    errContainer.append(errTitle);
+    document.body.append(errContainer);
+    setTimeout( () => {
+        errContainer.remove();
+    },6000)
+
+}
 
 async function getTodos() {
-    const response = await fetch(`${BASE_API}/todos`);
-    if(response.status === 200) {
-        todos = await response.json();
-        renderTodos(todos)
-    }
-    if(response.status === 204) {
-        emptyTodos();
+    try {
+        const response = await fetch(`${BASE_API}/todos`);
+        if (response && response.status === 200) {
+            todos = await response.json();
+            renderTodos(todos)
+        }
+        if (response && response.status === 204) {
+            emptyTodos();
+        }
+    }catch (err) {
+        showErr('Failed to load todos list');
     }
 }
+
 getTodos();
-
-
-
-
-
 
 
 form.addEventListener('submit', (event) => {
@@ -131,11 +149,24 @@ form.addEventListener('submit', (event) => {
             important: important,
         })
     })
-        .then(() => getTodos());
+        .then(() => getTodos())
+        .catch(() => showErr('Failed to load todos list'));
 
     event.target.reset();
 })
 
+searchField.addEventListener('change', (event) => {
+    let searchValue = event.target.value;
+    let todosTitle = Array.from(document.querySelectorAll('.todo label'));
+    todosTitle.forEach(todo => {
+        if(!todo.textContent.includes(searchValue)) {
+            todo.parentElement.parentElement.classList.add('hide-search');
+        }
+        if(todo.textContent.includes(searchValue)) {
+            todo.parentElement.parentElement.classList.remove('hide-search');
+        }
+    })
 
+})
 
 

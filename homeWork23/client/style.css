@@ -115,6 +115,11 @@ textarea {
     font-size: .8rem;
     color: #2C65A7;
 }
+.menu button.active {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-underline-color: black;
+}
 .filters :first-child {
     margin-right: 5px;
 }
@@ -188,4 +193,48 @@ input[type="checkbox"]:checked + label {
 }
 .hide {
     display: none;
+}
+.hide-search {
+    display: none;
+}
+.error {
+    position: fixed;
+    bottom: 50px;
+    left: 15px;
+    width: fit-content;
+    height: 10vh;
+    display: flex;
+    padding: 25px;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    background: #2C65A7;
+    border-radius: 25px;
+    transition-duration: 0.5s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    animation-name: showErr;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+@keyframes showErr {
+    from {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.error > p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: white;
 }
