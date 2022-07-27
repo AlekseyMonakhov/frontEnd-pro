@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+}
+header {
+    height: 20vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+nav {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
+nav h1 {
+    font-size: 64px}
+nav h3 {
+    font-size: 18px;
+}
+nav h3::after {
+    content: '';
+    position: absolute;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    background-image: url("./fast-delivery.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+nav h3::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: black;
+    transform: translateY(29px) translateX(90px);
+
+}
+.animation-start::before {
+    animation-name: road;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+    animation-delay: 2s;
+}
+.animation-start::after {
+    animation-name: ride;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+    animation-delay: 2s;
+}
+main {
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 10px;
+    padding: 10px;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+form {
+    display: flex;
+    width: 50vw;
+    flex-flow: column nowrap;
+}
+label {
+    transform: translateY(-50px);
+}
+@keyframes ride {
+    from {
+        right: 73vw;
+    }
+    to {
+        right: -50px;
+    }
+}
+@keyframes road {
+    from {
+        opacity: 1;
+        width: 30px;
+    }
+    90% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        width: 80vw;
+    }
+}
+
+
+.order {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 40vw;
+    height: fit-content;
+    padding: 10px;
+    gap: 25px;
+    border: 1px solid black;
+}

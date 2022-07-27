@@ -13,3 +13,4 @@ let person = {
         }
     }
 }
+console.log(person.fullName)
