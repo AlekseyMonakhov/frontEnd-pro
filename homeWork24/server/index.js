@@ -21,7 +21,17 @@ const server = createServer((request, response) => {
     response.setHeader('Access-Control-Allow-Headers', 'Content-type');
 
     if (method === 'get') {
-        if (url.pathname.includes('/order')) {
+        if(url.pathname === '/get-orders') {
+            if(getOrders().length) {
+                response.statusCode = 200;
+                response.end(JSON.stringify(getOrders()));
+                return;
+            }
+            response.statusCode = 204;
+            response.end('No orders yet')
+            return;
+        }
+        if (url.pathname === '/order') {
             let orderDescry = url.searchParams.get('clientOrder');
             let client = new order(orderDescry);
             addOrder(client);
