@@ -14,18 +14,16 @@ class TodoItem {
 }
 
 const handler = (url, buffer, request, response, method) => {
-    if (url.pathname.includes('/todos')) {
-        if (url.pathname === '/todos' && method === 'get') {
-            if (getTodos()) {
-                response.statusCode = 200;
-                response.end(JSON.stringify(getTodos()));
-                return;
-            }
-            response.statusCode = 204;
-            response.end('No todos added yet');
+    if (url.pathname === '/todos' && method === 'get') {
+        if (getTodos()) {
+            response.statusCode = 200;
+            response.end(JSON.stringify(getTodos()));
             return;
-
         }
+        response.statusCode = 204;
+        response.end('No todos added yet');
+        return;
+
     }
     if (url.pathname === '/todos' && method === 'post') {
         const data = JSON.parse(buffer);
@@ -58,7 +56,7 @@ const handler = (url, buffer, request, response, method) => {
         response.end(JSON.stringify(result));
         return;
     }
-    if(url.pathname.includes('/todos') && method === 'put') {
+    if (url.pathname.includes('/todos') && method === 'put') {
         const id = url.pathname.slice(7);
         const result = changeIsComplited(id);
 
