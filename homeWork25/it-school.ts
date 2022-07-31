@@ -29,7 +29,7 @@ class ItSchool {
         this.startedLearningGroups = this.startedLearningGroups
             .filter((group) => (group.courseName !== courseName) && (group.teacherName !== teacherName));
     }
-    getLearningGroups(courseName:string) {
+    getLearningGroups(courseName:string):object | undefined {
         return this.startedLearningGroups.filter((group) => group.courseName === courseName);
     }
 
