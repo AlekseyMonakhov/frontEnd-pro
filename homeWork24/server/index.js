@@ -40,7 +40,7 @@ const server = createServer((request, response) => {
             return;
         }
 
-        if (url.pathname === `/${getOrderId()}`) {
+        if (url.pathname === `/${getOrderId()}` && getOrderId()) {
             let id = getOrderId();
             let order = findOrder(id)
             response.setHeader('Content-Type', 'text/event-stream');
