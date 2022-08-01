@@ -56,6 +56,7 @@ const server = createServer((request, response) => {
                 response.write(`\n`);
                 if (availableStatuses[counter] === 'Delivered') {
                     clearInterval(inter);
+                    response.end("done");
                 }
                 ++counter;
             }, 2222)
