@@ -1,6 +1,6 @@
 let h3 = document.querySelector('h3');
 let form = document.querySelector('form');
-let main = document.querySelector('main');
+let main = document.querySelector('MainContainer');
 let getHistoryBtn = document.querySelector('.get-orders');
 const BASE_API = 'http://localhost:3001';
 
