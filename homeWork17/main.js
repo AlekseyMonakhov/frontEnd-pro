@@ -38,7 +38,9 @@ function solution(words) {
     let valuesMap = new Map();
 
     words.forEach((elem) => valuesMap.set(elem, valuesMap.has(elem) ? valuesMap.get(elem) + 1 :  1));
-    let arr =  [...valuesMap.entries()].sort((a, b) => b[1] - a[1]);
+    console.log([...valuesMap.entries()]);
+    console.log([...valuesMap]);
+    let arr =  [...valuesMap].sort((a,b) => b[1]- a[1]);
     return arr.map(value => value[0]);
 }
 

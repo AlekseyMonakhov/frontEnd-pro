@@ -123,7 +123,7 @@ class ReadError extends Error {
       validateUser(user);
     } catch (err) {
       if (err instanceof ValidationError) {
-        throw new ReadError("Ошибка валидации", err);
+        throw {ma:"msms"};
       } else {
         throw err;
       }

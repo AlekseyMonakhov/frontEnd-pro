@@ -1,6 +1,6 @@
 /// -------ES3
 function sayHi(){
-    console.log(`Hi, im ${this.firstName} ${this.lastName}`);
+    console.log(`Hi, im ${this.firstName} ${this.lastName} im ${this.age}`);
 };
 function personConstructor (firstName, lastName, age) {
     return {

@@ -23,7 +23,7 @@ console.log(hellow());
 
 /// Тегирование строк 
 const firstName1 = "Anne";
-console.log();
+console.log(firstName1);
 
 function tag(literals, ...substitutions) {
     console.log(literals);
