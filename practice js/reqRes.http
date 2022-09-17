@@ -1,0 +1,16 @@
+HTTP/1.1 GET 
+    Host: some.site.com
+    User-Agent: Mozilla
+    Accept: text/html, application/json
+    Accept-Language: en-US
+    Accept-Encoding: gzip
+
+
+//Responce
+
+HTTP/1.1 200ok
+Server: server file name
+Date: some date
+Content-type: text/html
+X-Powered-By: some program
+expires: some date

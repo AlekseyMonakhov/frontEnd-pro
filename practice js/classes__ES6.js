@@ -7,7 +7,7 @@ class Person1 {
         this.lastName = lastName;
         this.age = age;
     }
-    sayHi = function () {
+    sayHi =  () => {
         console.log(`Hi, im ${this.firstName} ${this.lastName}`);
     }
 }
@@ -123,3 +123,13 @@ class Ab {
 let test = new Ab("leo");
 test.a()
 test.b()
+
+class Abc extends Ab{
+    constructor(name,age) {
+        super(name);
+        this.age = age;
+    }  
+}
+let nn = new Abc ("leo",25);
+console.log(nn);
+nn.a();

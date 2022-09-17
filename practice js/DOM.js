@@ -20,3 +20,32 @@ h1.addEventListener("click", (ev) => {
     div[0].append(newDiv);
 }, { once: false })
 
+Promise.resolve(4).then(el => setTimeout(() => console.log(el), 2000));
+let a = new Promise(async (res, rej) => {
+
+    let timer = await new Promise((res, rej) => {
+        let luck = Math.fround(Math.random() * 3);
+        setTimeout(() => {
+            if (luck > 1) {
+                res("done")
+            } else {
+                rej("error 12")
+            }
+
+        }, 2000)
+    }).catch(err => err)
+    if (timer === "done") res(timer);
+    rej(timer)
+
+}).then((data) => console.log(data)).catch(err => console.log(err)).finally(() => console.log("hahah"))
+
+let prom = new Promise((res,rej) => {
+    res(100);
+});
+prom.then(res => res*2).then(res => console.log(res));
+
+
+Promise.all([])
+Promise.allSettled([])
+Promise.any([])
+Promise.race([])

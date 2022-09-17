@@ -15,3 +15,29 @@ const idSymbol = Symbol.for("id"); //srdaj;nfa;djsnf324;jnr2
 const idSymbolSecond = Symbol.for("id"); //srdaj;nfa;djsnf324;jnr2
 console.log(idSymbol === idSymbolSecond); /// true because id alredy exist as a Symbol;
 console.log(Symbol.keyFor(idSymbolSecond));
+let obj = {
+    0: 1,
+    "name": 2,
+    "lastName": 3,
+    3() {
+        console.log(this);
+    },
+    [Symbol.iterator]() {
+        let count = 0;
+        return {
+            next: () => {
+                let value = Object.keys(this);
+                value.push(...Object.getOwnPropertySymbols(this));
+                value = value[count++];
+                return { value, done: !value }
+            }
+        }
+    }
+}
+
+
+
+console.log(obj);
+for (const i of obj) {
+    console.log(i);
+}
