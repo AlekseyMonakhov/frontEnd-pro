@@ -1,4 +1,4 @@
-const server = (requestData, callback) => {
+export const server = (requestData, callback) => {
     console.log(`server recived ${requestData}`);
     setTimeout(() => {
         callback (`200 ok`);
