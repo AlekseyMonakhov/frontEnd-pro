@@ -94,20 +94,15 @@ console.log(newObj);
 console.log([...newObj2]);
 let t = {
     a: 0,
-    hello() {
-        let b = 2;
-        return (() => {
-            return this.a + b;
-        })()
-    }
+
 }
-console.log(t.hello());
-function hello() {
+t.hello = function () {
     let a = 1
     return (() => {
-        return this
+        this.a += a
     })();
 }
+console.log(t.hello());
 const a = {
     ['hello' + 'world']: '12345',
     [Symbol.for('test')]: '1234567',

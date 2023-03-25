@@ -114,22 +114,33 @@ class Ab {
     constructor(name) {
         this.name = name;
     }
-    a = () => console.log(this);
-    b = function () {
-        return console.log(this);
+    name = "test";
+    a = () => console.log(this.name, "arrow func");
+    b = function (a,b,c) {
+        console.log(this, "classic func");
     }
 }
 
+console.log("hello12")
 let test = new Ab("leo");
 test.a()
 test.b()
 
-class Abc extends Ab{
-    constructor(name,age) {
-        super(name);
-        this.age = age;
-    }  
-}
-let nn = new Abc ("leo",25);
-console.log(nn);
-nn.a();
+
+
+
+
+// class Abc extends Ab{
+//     constructor(name,age) {
+//         super(name);
+//         this.age = age;
+//     }
+// }
+// let nn = new Abc ("leo",25);
+// console.log(nn);
+// nn.a();
+// function test1 (num, ...rest) {
+//     this.name  = num
+//     console.log(this, ...rest)
+// }
+// test1(1,2,3,4,5,6,7,8,12)

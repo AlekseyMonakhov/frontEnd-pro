@@ -12,20 +12,15 @@ console.log(someData.has(`3`)); //true
 someData.clear();
 console.log(someData.size);
 
-
 console.log(someData);
-
-
 
 let ab = {
     name: "leo",
     lastName: "mona",
-    NaN: "this is NaN str"
-}
-
+    NaN: "this is NaN str",
+};
 
 const a = new Map(Object.entries(ab));
-
 
 console.log(a.values());
 console.log(a.keys());
@@ -37,22 +32,16 @@ console.log(a.has("NaN"));
 console.log(a.get("NaN"));
 console.log(a.entries());
 
-
 let objFormEntries = Object.fromEntries(a);
 console.log(objFormEntries);
 
 for (const i in objFormEntries) {
     console.log(i);
-    
 }
-
-
 
 console.log(a);
 
-
-
-const uniq = new Set ();
+const uniq = new Set();
 uniq.add(1);
 uniq.add(2);
 uniq.add(3);
@@ -63,9 +52,9 @@ uniq.add(5);
 uniq.add(5);
 const values = uniq.values();
 console.log(values);
-uniq.add('jdjdjdjd');
+uniq.add("jdjdjdjd");
 console.log(uniq.has("jdjdjdjd"));
-uniq.delete("jdjdjdjd")
+uniq.delete("jdjdjdjd");
 console.log(uniq.has("jdjdjdjd"));
 
 console.log([...uniq]);
